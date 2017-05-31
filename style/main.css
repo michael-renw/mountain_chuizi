@@ -692,7 +692,7 @@
     height: 96px;
     position: relative;
 }
-.thread-list li:last{
+.thread-list li:last-child{
      border-bottom: none;
 }
 .thread-list li img {
