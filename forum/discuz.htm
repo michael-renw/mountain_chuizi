@@ -1,0 +1,60 @@
+<!--{template common/header}-->
+<style id="diy_style" type="text/css"></style>
+
+<div class="main forums-page clearfix">
+	<div class="container-sm">
+		
+	<div class="section">
+			<!-- 注释 版块列表循环开始 -->
+		<!--{loop $catlist $key $cat}-->
+			<!--{hook/index_catlist $cat[fid]}-->
+			<div class="foldableBox content">
+				<h4>
+					<!-- 注释 绑定域名的设置 -->
+					<!--{eval $caturl = !empty($cat['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$cat['domain'].'.'.$_G['setting']['domain']['root']['forum'] : '';}-->
+					<!-- 注释 分区的名称 -->
+					<a href="{if !empty($caturl)}$caturl{else}forum.php?gid=$cat[fid]{/if}">$cat[name]</a>
+					<span title="收起/展开" class="btn-fold"></span>
+				</h4>
+				<div class="forumList-sm section-content">
+
+					<ul class="clearfix">
+						<!--{loop $cat[forums] $forumid}-->
+						<!--{eval $forum=$forumlist[$forumid];}-->
+						<!--{eval $forumurl = !empty($forum['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$forum['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?mod=forumdisplay&fid='.$forum['fid'];}-->
+						<li>
+							<!--{if $forum[icon]}-->
+									$forum[icon]
+								<!--{else}-->
+									<a href="$forumurl"{if $forum[redirect]} target="_blank"{/if}><img src="{IMGDIR}/forum_default.png" alt="$forum[name]" /></a>
+								<!--{/if}-->
+							<dl>
+								<dt>
+									<h2><a href="$forumurl">$forum[name]</a></h2>
+								</dt>
+								<dd>主题：<!--{echo dnumber($forum[threads])}-->&nbsp;&nbsp;帖数：<!--{echo dnumber($forum[posts])}--></dd>
+							</dl>
+						</li>
+
+						<!--{/loop}-->
+
+					</ul>
+
+				</div>
+
+			</div>
+			<!--{ad/intercat/bm a_c/$cat[fid]}-->
+		<!--{/loop}-->
+		</div>
+
+		<div class="sidebar">
+			 <!--[diy=um_forum_diy1]--><div id="um_forum_diy1" class="area"></div><!--[/diy]-->
+			 
+			 <!--[diy=um_forum_diy2]--><div id="um_forum_diy2" class="area"></div><!--[/diy]-->
+		</div>
+	</div>
+
+</div>
+      
+      <!--{template common/footer}--> 
+    
