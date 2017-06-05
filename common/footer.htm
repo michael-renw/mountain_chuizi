@@ -179,35 +179,38 @@
 
 <script type="text/javascript">checkBlind();</script>
 <script type="text/javascript" src="$_G['style'][styleimgdir]js/index.js?{VERHASH}"></script>
+<script src="$_G['style'][styleimgdir]js/jquery.toTop.min.js?{VERHASH}"></script>
 
 <!--{if $_G['basescript'] == 'portal' && CURMODULE == 'index'}-->
 <script type="text/javascript" src="$_G['style'][styleimgdir]js/jquery.flexslider.js?{VERHASH}"></script>
 <script type="text/javascript" src="$_G['style'][styleimgdir]js/jquery.pagination.js?{VERHASH}"></script>
  <script type="text/javascript">
-   var jQuery = jQuery.noConflict();
-   function pageselectCallback(page_index, jq){
+
+
+    (function($){
+    	function pageselectCallback(page_index, jq){
    		var new_content = "";
    		
                 if(page_index == 0){
-                      new_content = jQuery('#hiddenresult div.discuss-box:lt('+(page_index+1)*10+') ').clone();
+                      new_content = $('#hiddenresult div.discuss-box:lt('+(page_index+1)*10+') ').clone();
                      
                 }else{
 
-                     new_content = jQuery('#hiddenresult div.discuss-box:gt('+(page_index*10-1)+'):lt(10) ').clone();
-                     jQuery('#Pagination a:eq(1)').on('click',function(){
-                     	jQuery('html,body').animate({scrollTop:jQuery('#discussBox').offset().top}, 300);
+                     new_content = $('#hiddenresult div.discuss-box:gt('+(page_index*10-1)+'):lt(10) ').clone();
+                     $('#Pagination a:eq(1)').on('click',function(){
+                     	$('html,body').animate({scrollTop:$('#discussBox').offset().top}, 300);
                      });
-                     jQuery('html,body').animate({scrollTop:jQuery('#discussBox').offset().top}, 300);
+                     $('html,body').animate({scrollTop:$('#discussBox').offset().top}, 300);
                 }
-        jQuery('#Searchresult').empty().append(new_content);
-         
-        return false;               
-   }
-   function initPagination() {
+	        $('#Searchresult').empty().append(new_content);
+	         
+	        return false;               
+   		}
+   		   function initPagination() {
                 // count entries inside the hidden content
-                var num_entries = jQuery('#hiddenresult div.discuss-box').length;
+                var num_entries = $('#hiddenresult div.discuss-box').length;
                 // Create content inside pagination element
-                jQuery("#Pagination").pagination(num_entries, {
+                $("#Pagination").pagination(num_entries, {
                     num_edge_entries: 2,
                     num_display_entries: 6,
                     callback: pageselectCallback,
@@ -217,18 +220,34 @@
                     link_to:"javascript:;",
                 });
              }
-    jQuery(document).ready(function(){
-      jQuery('.flexslider').flexslider({
+             $(document).ready(function(){
+      $('.flexslider').flexslider({
         animation: "slide"
       });
       initPagination();
        
     });
+
+    })(jQuery);
+
+
   </script>
   
 <!--{/if}-->
-
-<script src="$_G['style'][styleimgdir]js/toTop.js?{VERHASH}"></script>
+<script type="text/javascript">
+	var jQ = jQuery.noConflict();
+	jQ(function($){
+		$('.back-top').toTop({
+               //options with default values
+               autohide: true,  //boolean 'true' or 'false'
+               offset: 420,     //numeric value (as pixels) for scrolling length from top to hide automatically
+               speed: 500,      //numeric value (as mili-seconds) for duration
+               position:true,   //boolean 'true' or 'false'. Set this 'false' if you want to add custom position with your own css
+               right: 15,       //numeric value (as pixels) for position from right. It will work only if the 'position' is set 'true'
+               bottom: 30       //numeric value (as pixels) for position from bottom. It will work only if the 'position' is set 'true'
+           });
+	});
+</script>
 
 <!--{/if}-->
 <!--{if isset($_G['makehtml'])}-->

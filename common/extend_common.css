@@ -783,8 +783,8 @@ a.pn:hover {
     width: 38px;
 }
 #scbar_btn {
-    background: transparent none repeat scroll 0 0;
-    border: medium none;
+    background: transparent none;
+    border: none;
     box-shadow: none;
     margin: 0;
     padding: 0;
@@ -4712,7 +4712,7 @@ td.fl_icn {
     padding-top: 54px;
 }
 #scbar {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    background: none;
     border-bottom: 0 none;
     border-top: 0 none;
     float: left;
@@ -4724,20 +4724,19 @@ td.fl_icn {
     padding-left: 13px;
 }
 #scbar .scbar_icon_td {
-    background: rgba(0, 0, 0, 0) url({STYLEIMGDIR}/search2.png) no-repeat scroll 0 -52px;
+    background: url({STYLEIMGDIR}/search2.png) no-repeat 0 -52px;
     width: 33px;
 }
 #scbar .scbar_txt_td {
-    background: rgba(0, 0, 0, 0) url({STYLEIMGDIR}/search2.png) repeat-x scroll 0 -95px;
+    background: url({STYLEIMGDIR}/search2.png) repeat-x  0 -95px;
     overflow: hidden;
 }
 #scbar .scbar_type_td {
-    background: rgba(0, 0, 0, 0) url({STYLEIMGDIR}/search2.png) no-repeat scroll 0 -195px;
+    background: url({STYLEIMGDIR}/search2.png) no-repeat  0 -195px;
     width: 61px;
 }
 #scbar #scbar_txt {
     border: 0 none;
-    height: 25px;
     padding: 0;
     width: 150px;
 }

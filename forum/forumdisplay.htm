@@ -31,14 +31,14 @@
                   <!--{/if}-->
                   <!--{hook/forumdisplay_filter_extra}-->
                   </ul>
-                  <button id="filter-post-btn" class="btn-post js-needLogin-btn" {if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} title="{lang send_posts}">发布新贴</button>
+                  <button id="filter-post-btn" class="btn-post js-needLogin-btn" {if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} title="{lang send_posts}">{lang send_posts}</button>
 
 
 
                </div>
                <div class="forum-list-panel-bottom">
                   <div class="forum-list-panel-filter clearfix">
-                     <span>筛选：</span>
+                     <span>筛选：{lang screening}：</span>
                      <div class="element-select">
                         <div class="element-select-current">
                            <a id="filter_special" href="javascript:;" class="showmenu xi2{if $_GET['specialtype']} xw1{/if}" onclick="showMenu(this.id)"><!--{if $_GET['specialtype'] == 'poll'}-->{lang thread_poll}<!--{elseif $_GET['specialtype'] == 'trade'}-->{lang thread_trade}<!--{elseif $_GET['specialtype'] == 'reward'}-->{lang thread_reward}<!--{elseif $_GET['specialtype'] == 'activity'}-->{lang thread_activity}<!--{elseif $_GET['specialtype'] == 'debate'}-->{lang thread_debate}<!--{else}-->{lang threads_all}<!--{/if}--></a>
@@ -50,7 +50,7 @@
                   </div>
                   <div class="forum-list-panel-options clearfix">
                      <ul>
-                        <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]">默认</a></li>
+                        <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]">{lang list_default_sort}</a></li>
                         <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=lastpost&orderby=lastpost$forumdisplayadd[lastpost]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['filter'] == 'lastpost'} xw1{/if}">{lang latest}</a></li>
                         <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=digest&digest=1$forumdisplayadd[digest]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['filter'] == 'digest'} xw1{/if}">{lang digest_posts}</a></li>
                         <li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=reply&orderby=views$forumdisplayadd[view]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" {if $_GET['orderby'] == 'views'}class="xw1"{/if}>{lang views}</a></li>
@@ -88,15 +88,15 @@
 
       <div class="sidebar">
          <div class="profile">
-            <a href="home.php?mod=spacecp&ac=favorite&type=forum&id=$_G[fid]&handlekey=favoriteforum&formhash={FORMHASH}" class="collect"><i class="icon-fav-star"></i>收藏本版</a>
+            <a href="home.php?mod=spacecp&ac=favorite&type=forum&id=$_G[fid]&handlekey=favoriteforum&formhash={FORMHASH}" class="collect"><i class="icon-fav-star"></i>{lang forum_favorite}</a>
             <div class="profile-card">
                <span class="avatar"><img src="$icon" alt="$forum[name]"></span>
                <p><span class="name">$_G['forum'][name]</span></p>
             </div>
             <ul class="profile-col-3 clearfix">
-               <li><span>今日</span><em>$_G[forum][todayposts]</em></li>
-               <li><span>主题</span><em>$_G[forum][threads]</em></li>
-               <li><span>排名</span><em>$_G[forum][rank]</em></li>
+               <li><span>{lang forum_todayposts}</span><em>$_G[forum][todayposts]</em></li>
+               <li><span>{lang forum_threads}</span><em>$_G[forum][threads]</em></li>
+               <li><span>{lang rank}</span><em>$_G[forum][rank]</em></li>
             </ul>
          </div>
          <!--[diy=um_forumdisplay_diy1]--><div id="um_forumdisplay_diy1" class="area"></div><!--[/diy]-->

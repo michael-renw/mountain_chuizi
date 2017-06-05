@@ -15,7 +15,7 @@
 	
 		<div class="section">
 			<div class="content">
-				<h4>资讯</h4>
+				<h4>$cat[catname]</h4>
 				<div class="section-content">
 					<!-- 注释 列表内容循环 -->
 					<!--{loop $list['list'] $value}-->
@@ -28,7 +28,7 @@
 							<h2><a href="$article_url" target="_blank" $highlight>$value[title]</a> <!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--></h2>
 							<ul class="post-info">
 								<li class="author">$value[author]</li>
-								<li class="time">发表于$value[dateline]</li>
+								<li class="time">{lang post_on}$value[dateline]</li>
 								<li class="review">$value[commentnum]</li>
 								<li class="browse">$value[viewnum]</li>
 							</ul>
@@ -39,7 +39,7 @@
 							</div>
 							<!--{/if}-->
 							<p>
-								$value[summary]<span> <a target="_blank" href="$article_url">查看全文</a></span>
+								$value[summary]<span> <a target="_blank" href="$article_url">{lang view_article}</a></span>
 							</p>
 							<!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $value['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $value['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
 								<span class="xg1">

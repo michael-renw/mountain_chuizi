@@ -1090,7 +1090,7 @@ a {
     outline: 0 none;
 }
 .header-sm {
-    background: rgba(0, 0, 0, 0) url(../michael_img/header-common.png) repeat-x scroll 0 0;
+    background: url(../michael_img/header-common.png) repeat-x;
 }
 .header-main {
     height: 59px;
@@ -1155,8 +1155,8 @@ a {
     border-top: 1px solid transparent;
     height: 41px;
 }
-.location h2 {
-    background: rgba(0, 0, 0, 0) url(../michael_img/home.png) no-repeat scroll left center;
+.location h2 {   
+    background: url(../michael_img/home.png) no-repeat left center;
     color: #757575;
     float: left;
     font-size: 12px;
@@ -1313,7 +1313,8 @@ a {
     border-left: 0 none;
 }
 .back-top {
-    background: rgba(0, 0, 0, 0) url(../michael_img/arrow_up.png) no-repeat scroll 0 0 / contain ;
+    background: url(../michael_img/arrow_up.png) no-repeat scroll 0 0 ;
+    background-size: contain;
     bottom: 20px;
     cursor: pointer;
     height: 64px;
@@ -1733,13 +1734,13 @@ a {
     padding-left: 10px;
 }
 .section .post-info .review {
-    background: rgba(0, 0, 0, 0) url(../michael_img/review.png) no-repeat scroll left center;
+    background: url(../michael_img/review.png) no-repeat scroll left center;
     float: right;
     padding-left: 30px;
     text-align: right;
 }
 .section .post-info .browse {
-    background: rgba(0, 0, 0, 0) url(../michael_img/browse.png) no-repeat scroll left center;
+    background: url(../michael_img/browse.png) no-repeat scroll left center;
     float: right;
     margin-right: 20px;
     padding-left: 33px;
@@ -2065,7 +2066,7 @@ a {
     float: right;
 }
 #scbar #scbar_txt {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    background: none repeat scroll 0 0;
     width: 110px;
 }
 #scbar_type {
