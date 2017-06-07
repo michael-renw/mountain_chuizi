@@ -71,7 +71,11 @@
 			<script type="text/javascript">setTimeout(setShortcut, 2000);</script>
 		<!--{/if}-->
 		<!-- 注释 顶部导航 -->
-		<div id="toptb" class="cl" style="display: block;">
+		<!--{if check_diy_perm($topic)}-->
+			<div id="toptb" class="cl">
+		<!--{else}-->
+			<div id="toptb" class="cl" style="display: none">
+		<!--{/if}-->
 			<!--{hook/global_cpnav_top}-->
 			<div class="wp">
 			<!-- 注释 左侧 -->
